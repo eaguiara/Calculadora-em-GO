@@ -5,31 +5,14 @@ import (
   "math"
 )
 
-var escolha int
+var option int
 var num, numaux float64
 
-func main() {
-
-  menu() 
-  escolher_funcao()
+func menu(){
   
-  fmt.Println("         ")
-	fmt.Println("Digite o primeiro número:")
-  fmt.Scanln(&num)
-  fmt.Println("\n")
-
-  fmt.Println("Digite o segundo número:")
-  fmt.Scanln(&numaux)
-  fmt.Println("\n")
-  }
-
+   fmt.Println("============== Calculadora simples Eduarda Aguiar ==============\n") 
   
-
-
-func menu() {
-  fmt.Println("============== Calculadora simples Eduarda Aguiar ==============\n") 
-  
-
+  fmt.Println("==================================")
   fmt.Println("Digite qual operação deseja fazer:\n")
   
   fmt.Println("1) Soma")
@@ -42,43 +25,69 @@ func menu() {
   fmt.Println("8) Raiz Cubica")
   fmt.Println("9) Logaritmo\n")
 
-  fmt.Scanln(&escolha)
-
 }
- 
-func escolher_funcao(int escolha, float64 num, float64 numaux){
-  var resultado float64
 
-  switch escolha {
+ 
+func main() {
+  
+  menu()
+  
+  fmt.Println("         ")
+	fmt.Println("Digite o primeiro número:")
+  fmt.Scanln(&num)
+  fmt.Println("\n")
+
+  fmt.Println("Digite o segundo número:")
+  fmt.Scanln(&numaux)
+  fmt.Println("\n")
+
+  
+  switch option {
+    fmt.Scanln(&option)
   case 1:
-   resultado = soma(num, numaux)
-   fmt.Println("O resultado é", soma)
+   
+    fmt.Scanln(&num)
+    
+    fmt.Scanln(&numaux)
+   var soma float64 = num + numaux 
+   fmt.Println("O option é", soma)
+    
   case 2:      
-   resultado = subtracao(num, numaux)
-   fmt.Println("O resultado é",subtracao)
+  var subtracao float64 = num - numaux
+   fmt.Println("O option é",subtracao)
+    
   case 3:
-   resultado = divisao(num, numaux)
-   fmt.Println("O resultado é",divisao)
+  var divisao float64 = num / numaux
+   fmt.Println("O option é",divisao)
+    
   case 4:
-   resultado = multiplicacao(num, numaux)
-   fmt.Println("O resultado é",multiplicacao)
+  var multiplicacao float64 = num * numaux
+   fmt.Println("O option é",multiplicacao)
+    
   case 5:
-   resultado = Elevar_número_ao_quadrado(num)
-   fmt.Println("O resultado é",Elevar_número_ao_quadrado)
+  var Elevar_número_ao_quadrado float64 = math.Pow(num,2)
+   fmt.Println("O option é",Elevar_número_ao_quadrado)
+    
   case 6:
-   resultado = Elevar_número_ao_cubo(num)
-   fmt.Println("O resultado é",Elevar_número_ao_cubo)  
+  var Elevar_número_ao_cubo float64 = math.Pow(num,3)
+   fmt.Println("O option é",Elevar_número_ao_cubo)  
+    
   case 7:
-   resultado = Raiz_Quadrada(num)
-   fmt.Println("O resultado é",Raiz_Quadrada) 
+  var Raiz_Quadrada float64 = math.Sqrt(num)
+   fmt.Println("O option é",Raiz_Quadrada) 
+    
   case 8:
-   resultado = Raiz_Cubo(num)
-   fmt.Println("O resultado é",Raiz_Cubo) 
+  var Raiz_Cubo float64 = math.Cbrt(num)
+   fmt.Println("O option é",Raiz_Cubo) 
   case 9:
-   resultado = Logaritmo(num, numaux)
-   fmt.Println("O resultado é",Logaritmo)
+  var Logaritmo float64 = num * numaux
+   fmt.Println("O option é",Logaritmo)
+
+  
+    
+    
   default:
-  fmt.Println("Número inválido!")     
+  fmt.Println("Número inválido!")
+         
   }
-  
-  
+}
