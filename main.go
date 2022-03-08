@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-  "math"
 )
 
 func inicio(){
@@ -13,6 +12,7 @@ func inicio(){
   fmt.Println("3) Divisão")
   fmt.Println("4) Multiplicação")
  
+  
   
 }
 
